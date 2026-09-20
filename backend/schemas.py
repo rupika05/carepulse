@@ -1,0 +1,133 @@
+"""
+schemas.py — Pydantic request / response models for the Healthcare Triage Classification system (MM26ML03).
+"""
+from pydantic import BaseModel, Field
+from typing import Optional, Dict, List, Any
+from enum import Enum
+
+
+class Gender(str, Enum):
+    M = "M"
+    F = "F"
+
+
+class AVPU(str, Enum):
+    A = "A"
+    V = "V"
+    P = "P"
+    U = "U"
+
+
+class TriageClass(str, Enum):
+    RED = "RED"
+    YELLOW = "YELLOW"
+    GREEN = "GREEN"
+    BLACK = "BLACK"
+
+
+class PatientInput(BaseModel):
+    """Input features for a single patient triage prediction matching MM26ML03 schema."""
+    subject_id: Optional[Any] = Field(None, description="Optional patient identifier")
+    patient_id: Optional[Any] = Field(None, description="Alias for patient identifier")
+
+    # Demographics & Categoricals
+    gender: Optional[str] = Field(None, description="Gender (M/F)")
+    race: Optional[str] = Field(None, description="Patient race/ethnicity")
+    arrival_transport: Optional[str] = Field(None, description="Arrival mode (AMBULANCE, WALK IN, OTHER, UNKNOWN)")
+    avpu: Optional[str] = Field(None, description="AVPU consciousness (A, V, P, U)")
+    consciousness_source: Optional[str] = Field(None, description="Source of consciousness assessment")
+    chiefcomplaint: Optional[str] = Field(None, description="Chief complaint or trauma presentation")
+    description: Optional[str] = Field(None, description="Clinical triage notes or narrative presentation")
+
+    # Core Vitals
+    temperature: Optional[float] = Field(None, description="Body temperature (°F)")
+    heartrate: Optional[float] = Field(None, description="Heart rate (bpm)")
+    resprate: Optional[float] = Field(None, description="Respiratory rate (breaths/min)")
+    o2sat: Optional[float] = Field(None, description="Oxygen saturation (%)")
+    sbp: Optional[float] = Field(None, description="Systolic blood pressure (mmHg)")
+    dbp: Optional[float] = Field(None, description="Diastolic blood pressure (mmHg)")
+    bp_unobtainable: Optional[float] = Field(None, description="1 if blood pressure is unobtainable, else 0")
+    pain_score: Optional[float] = Field(None, description="Pain score (0-10)")
+    pain_assessable: Optional[float] = Field(None, description="1 if pain is assessable, else 0")
+
+    # Neurological / GCS
+    gcs_eye: Optional[float] = Field(None, description="GCS Eye opening (1-4)")
+    gcs_verbal: Optional[float] = Field(None, description="GCS Verbal response (1-5)")
+    gcs_motor: Optional[float] = Field(None, description="GCS Motor response (1-6)")
+    gcs_total: Optional[float] = Field(None, ge=3, le=15, description="GCS Total score (3-15)")
+    avpu_ordinal: Optional[float] = Field(None, description="Ordinal AVPU score (1=U, 2=P, 3=V, 4=A)")
+    follows_commands: Optional[float] = Field(None, description="1 if patient follows commands, else 0")
+
+    # Vital Sign Aggregates & History
+    vs_heartrate_min: Optional[float] = Field(None, description="Min recorded heart rate")
+    vs_heartrate_max: Optional[float] = Field(None, description="Max recorded heart rate")
+    vs_heartrate_mean: Optional[float] = Field(None, description="Mean recorded heart rate")
+    vs_resprate_min: Optional[float] = Field(None, description="Min respiratory rate")
+    vs_resprate_max: Optional[float] = Field(None, description="Max respiratory rate")
+    vs_resprate_mean: Optional[float] = Field(None, description="Mean respiratory rate")
+    vs_sbp_min: Optional[float] = Field(None, description="Min systolic BP")
+    vs_sbp_max: Optional[float] = Field(None, description="Max systolic BP")
+    vs_sbp_mean: Optional[float] = Field(None, description="Mean systolic BP")
+    vs_o2sat_min: Optional[float] = Field(None, description="Min O2 saturation")
+    vs_o2sat_max: Optional[float] = Field(None, description="Max O2 saturation")
+    vs_o2sat_mean: Optional[float] = Field(None, description="Mean O2 saturation")
+    vs_temperature_max: Optional[float] = Field(None, description="Max body temperature")
+    n_vitalsign_readings: Optional[float] = Field(None, description="Number of vital sign readings")
+    n_diagnoses: Optional[float] = Field(None, description="Number of historical diagnoses")
+    n_home_meds: Optional[float] = Field(None, description="Number of home medications")
+
+    model_config = {"extra": "ignore"}
+
+
+class ProbabilityBreakdown(BaseModel):
+    RED: float
+    YELLOW: float
+    GREEN: float
+    BLACK: float
+
+
+class ExpectedCostBreakdown(BaseModel):
+    RED: float
+    YELLOW: float
+    GREEN: float
+    BLACK: float
+
+
+class PredictionResponse(BaseModel):
+    """Response from the /predict endpoint."""
+    triage: TriageClass
+    probabilities: ProbabilityBreakdown
+    expected_costs: ExpectedCostBreakdown
+    model_name: str
+    subject_id: Optional[Any] = None
+    patient_id: Optional[Any] = None
+    saved_to_csv: bool = True
+    csv_file: str = "data/assessed_patients.csv"
+    total_assessed_records: Optional[int] = None
+    disclaimer: str = (
+        "This result is generated by a machine learning prototype for clinical decision support. "
+        "All triage decisions must be confirmed by qualified emergency medical professionals."
+    )
+
+
+
+class HealthResponse(BaseModel):
+    status: str
+    model_loaded: bool
+    model_name: Optional[str] = None
+    competition_id: str = "MM26ML03"
+
+
+class BatchPredictionItem(BaseModel):
+    subject_id: Any
+    predicted_triage: str
+    red_probability: float
+    yellow_probability: float
+    green_probability: float
+    black_probability: float
+
+
+class BatchPredictionResponse(BaseModel):
+    total_patients: int
+    distribution: Dict[str, int]
+    predictions: List[BatchPredictionItem]

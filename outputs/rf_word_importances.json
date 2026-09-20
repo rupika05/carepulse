@@ -1,0 +1,242 @@
+[
+  {
+    "word": "arrives ambulance",
+    "importance": 0.025263
+  },
+  {
+    "word": "patient",
+    "importance": 0.020341
+  },
+  {
+    "word": "breaths",
+    "importance": 0.016468
+  },
+  {
+    "word": "vitals",
+    "importance": 0.01442
+  },
+  {
+    "word": "vitals reveal",
+    "importance": 0.013813
+  },
+  {
+    "word": "breaths min",
+    "importance": 0.013234
+  },
+  {
+    "word": "min",
+    "importance": 0.012876
+  },
+  {
+    "word": "bpm",
+    "importance": 0.012217
+  },
+  {
+    "word": "arrives",
+    "importance": 0.012014
+  },
+  {
+    "word": "spontaneous",
+    "importance": 0.011539
+  },
+  {
+    "word": "patient arrives",
+    "importance": 0.011513
+  },
+  {
+    "word": "presenting",
+    "importance": 0.011338
+  },
+  {
+    "word": "reveal",
+    "importance": 0.011244
+  },
+  {
+    "word": "rate bpm",
+    "importance": 0.011074
+  },
+  {
+    "word": "rate",
+    "importance": 0.010232
+  },
+  {
+    "word": "respirations",
+    "importance": 0.009808
+  },
+  {
+    "word": "verbal",
+    "importance": 0.009254
+  },
+  {
+    "word": "alert",
+    "importance": 0.009052
+  },
+  {
+    "word": "respirations regular",
+    "importance": 0.007848
+  },
+  {
+    "word": "spontaneous respirations",
+    "importance": 0.007824
+  },
+  {
+    "word": "commands",
+    "importance": 0.007814
+  },
+  {
+    "word": "pain",
+    "importance": 0.0077
+  },
+  {
+    "word": "blood",
+    "importance": 0.007532
+  },
+  {
+    "word": "blood pressure",
+    "importance": 0.007395
+  },
+  {
+    "word": "oriented",
+    "importance": 0.00706
+  },
+  {
+    "word": "alert oriented",
+    "importance": 0.006766
+  },
+  {
+    "word": "regular",
+    "importance": 0.006451
+  },
+  {
+    "word": "patient fully",
+    "importance": 0.006278
+  },
+  {
+    "word": "unlabored",
+    "importance": 0.006025
+  },
+  {
+    "word": "unlabored breaths",
+    "importance": 0.00601
+  },
+  {
+    "word": "fully",
+    "importance": 0.005777
+  },
+  {
+    "word": "pressure",
+    "importance": 0.005487
+  },
+  {
+    "word": "follows",
+    "importance": 0.00537
+  },
+  {
+    "word": "regular unlabored",
+    "importance": 0.005356
+  },
+  {
+    "word": "oriented promptly",
+    "importance": 0.005279
+  },
+  {
+    "word": "fully alert",
+    "importance": 0.00518
+  },
+  {
+    "word": "promptly follows",
+    "importance": 0.004988
+  },
+  {
+    "word": "follows verbal",
+    "importance": 0.00486
+  },
+  {
+    "word": "oxygen saturation",
+    "importance": 0.004782
+  },
+  {
+    "word": "saturation",
+    "importance": 0.00472
+  },
+  {
+    "word": "verbal commands",
+    "importance": 0.003981
+  },
+  {
+    "word": "oxygen",
+    "importance": 0.003738
+  },
+  {
+    "word": "promptly",
+    "importance": 0.003422
+  },
+  {
+    "word": "adequate",
+    "importance": 0.003321
+  },
+  {
+    "word": "bpm systolic",
+    "importance": 0.003083
+  },
+  {
+    "word": "adequate oxygen",
+    "importance": 0.003014
+  },
+  {
+    "word": "pulse",
+    "importance": 0.003003
+  },
+  {
+    "word": "commands spontaneous",
+    "importance": 0.00295
+  },
+  {
+    "word": "min vitals",
+    "importance": 0.002872
+  },
+  {
+    "word": "mmhg adequate",
+    "importance": 0.002829
+  },
+  {
+    "word": "systolic",
+    "importance": 0.00249
+  },
+  {
+    "word": "measured",
+    "importance": 0.002449
+  },
+  {
+    "word": "stable",
+    "importance": 0.002439
+  },
+  {
+    "word": "measured mmhg",
+    "importance": 0.0022
+  },
+  {
+    "word": "mmhg",
+    "importance": 0.001977
+  },
+  {
+    "word": "pulse rate",
+    "importance": 0.00186
+  },
+  {
+    "word": "stable pulse",
+    "importance": 0.001722
+  },
+  {
+    "word": "systolic blood",
+    "importance": 0.001602
+  },
+  {
+    "word": "reveal stable",
+    "importance": 0.00141
+  },
+  {
+    "word": "pressure measured",
+    "importance": 0.001167
+  }
+]

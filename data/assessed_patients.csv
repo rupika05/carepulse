@@ -1,0 +1,7 @@
+timestamp,subject_id,gender,race,arrival_transport,temperature,heartrate,resprate,o2sat,sbp,dbp,bp_unobtainable,pain_score,pain_assessable,gcs_eye,gcs_verbal,gcs_motor,gcs_total,avpu,avpu_ordinal,follows_commands,consciousness_source,chiefcomplaint,description,n_vitalsign_readings,n_diagnoses,n_home_meds,predicted_triage,red_probability,yellow_probability,green_probability,black_probability
+2026-09-20 05:29:11,TEST_ASSESS_001,M,,,,120.0,30.0,88.0,85.0,,,,,,,,12.0,,,,,CHEST PAIN,,,,,YELLOW,0.1968,0.7435,0.0484,0.0113
+2026-09-20 05:30:33,TEST_RED_001,M,,,,,,,,,,,,,,,9.0,Pain,,,,,,,,,RED,0.1557,0.2471,0.5895,0.0077
+2026-09-20 05:30:52,TEST_RED_001,M,,,,,,,,,,,,,,,9.0,Pain,,,,,,,,,RED,0.1557,0.2471,0.5895,0.0077
+2026-09-20 05:30:52,TEST_CSV_PATIENT_99,F,,,,110.0,24.0,92.0,95.0,,,,,,,,,,,,,FRACTURE,,,,,YELLOW,0.2153,0.7387,0.0358,0.0102
+2026-09-20 05:31:15,TEST_RED_001,M,,,,,,,,,,,,,,,9.0,Pain,,,,,,,,,RED,0.1557,0.2471,0.5895,0.0077
+2026-09-20 05:31:15,TEST_CSV_PATIENT_99,F,,,,110.0,24.0,92.0,95.0,,,,,,,,,,,,,FRACTURE,,,,,YELLOW,0.2153,0.7387,0.0358,0.0102

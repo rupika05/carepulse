@@ -1,0 +1,33 @@
+{
+  "model": "Gradient Boosting",
+  "accuracy": 0.8946,
+  "macro_f1": 0.892,
+  "weighted_f1": 0.8935,
+  "total_cost": 136.0,
+  "per_class": {
+    "RED": {
+      "precision": 0.8732,
+      "recall": 0.9185,
+      "f1": 0.8953,
+      "support": 135
+    },
+    "YELLOW": {
+      "precision": 0.8471,
+      "recall": 0.9754,
+      "f1": 0.9067,
+      "support": 284
+    },
+    "GREEN": {
+      "precision": 0.9856,
+      "recall": 0.7784,
+      "f1": 0.8698,
+      "support": 176
+    },
+    "BLACK": {
+      "precision": 1.0,
+      "recall": 0.8116,
+      "f1": 0.896,
+      "support": 69
+    }
+  }
+}
